@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from "axios";
 
 Vue.use(Vuex)
-const baseUrl = 'https://us-central1-ottoklauss-5927c.cloudfunctions.net/courses/courses'
+const baseUrl = 'https://us-central1-livecoding-72eda.cloudfunctions.net/courses/courses'
 export default new Vuex.Store({
   state: {
     courses:[],

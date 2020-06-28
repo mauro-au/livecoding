@@ -45,7 +45,7 @@ export default {
         alert(`Bienvenido ${this.user}`)
       })
       .catch(()=>{
-        alert('no no nooo')
+        alert('Algo salio mal, intentelo denuevo')
       })
     }    
   },

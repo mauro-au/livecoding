@@ -5,7 +5,7 @@
       <v-col cols="12" md="4" sm="6"
       v-for="(course, index) in courses" :key="index">
         <v-card class="mx-auto" max-width="400">
-          <v-img class="white--text align-end" height="200px" :src="course.data.name">
+          <v-img class="white--text align-end" height="200px" :src="course.data.img">
             <v-card-title>{{course.data.name}}</v-card-title>
           </v-img>
 
