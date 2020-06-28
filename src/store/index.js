@@ -7,6 +7,7 @@ const baseUrl = 'https://us-central1-livecoding-72eda.cloudfunctions.net/courses
 export default new Vuex.Store({
   state: {
     courses:[],
+    overlay: false,
     data:{
       name: '',
       img:'',
@@ -14,13 +15,19 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    SET_COURSES(state, data) { state.courses = data},
+    SET_COURSES(state, data) { state.courses = data },
+    DISPLAY_OVERLAY(state) { state.overlay = true },
+    HIDE_OVERLAY(state) { state.overlay = false },
   },
   actions: {
     setCourses({ commit }){
+      commit('DISPLAY_OVERLAY')
       axios.get(`${baseUrl}`)
       .then((response)=>{
         commit('SET_COURSES', response.data)
+      })
+      .finally(()=>{
+        commit('HIDE_OVERLAY')
       })
     }
   },
